@@ -2,38 +2,38 @@
 
 ---
 
-## Running with Docker Compose
+## Executando com Docker Compose
 
-This project includes a `docker-compose.yml` file to easily run the application and a MongoDB database locally.
+Este projeto inclui um arquivo `docker-compose.yml` para executar facilmente a aplicação e um banco de dados MongoDB localmente.
 
-### Prerequisites
+### Pré-requisitos
 
 *   [Docker](https://docs.docker.com/get-docker/)
-*   [Docker Compose](https://docs.docker.com/compose/install/) (usually included with Docker Desktop)
+*   [Docker Compose](https://docs.docker.com/compose/install/) (geralmente incluído no Docker Desktop)
 
-### Steps
+### Passos
 
-1.  **Build and Run:**
-    Open a terminal in the project root directory and run:
+1.  **Construir e Executar (Build and Run):**
+    Abra um terminal no diretório raiz do projeto e execute:
     ```bash
     docker-compose up -d --build
     ```
-    *   `--build`: Forces Docker Compose to rebuild the application image if there are changes in the `Dockerfile` or application code.
-    *   `-d`: Runs the containers in detached mode (in the background).
+    *   `--build`: Força o Docker Compose a reconstruir a imagem da aplicação se houver alterações no `Dockerfile` ou no código da aplicação.
+    *   `-d`: Executa os contêineres em modo detached (em segundo plano).
 
-2.  **Accessing the API:**
-    Once the containers are up and running, the Product API will be accessible at `http://localhost:8080`.
-    For example, to get all products:
+2.  **Acessando a API:**
+    Assim que os contêineres estiverem em execução, a API de Produtos estará acessível em `http://localhost:8080`.
+    Por exemplo, para obter todos os produtos:
     ```
     http://localhost:8080/products
     ```
 
-3.  **Stopping the application:**
-    To stop and remove the containers, run:
+3.  **Parando a aplicação:**
+    Para parar e remover os contêineres, execute:
     ```bash
     docker-compose down
     ```
-    If you want to remove the MongoDB data volume as well (all data will be lost), run:
+    Se você deseja remover também o volume de dados do MongoDB (todos os dados serão perdidos), execute:
     ```bash
     docker-compose down -v
     ```
