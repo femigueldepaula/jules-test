@@ -37,3 +37,19 @@ Este projeto inclui um arquivo `docker-compose.yml` para executar facilmente a a
     ```bash
     docker-compose down -v
     ```
+
+---
+
+## Documentação da API (OpenAPI)
+
+A documentação da API é gerada automaticamente utilizando OpenAPI 3.0 e pode ser acessada através do Swagger UI.
+
+Após iniciar a aplicação (por exemplo, utilizando Docker Compose), a interface do Swagger UI estará disponível no seguinte endereço:
+
+[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+Lá você poderá visualizar todos os endpoints da API, seus parâmetros, corpos de requisição/resposta e testá-los interativamente.
+
+A definição OpenAPI JSON crua pode ser acessada em:
+
+[http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
