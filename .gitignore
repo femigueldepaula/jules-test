@@ -38,3 +38,13 @@ out/
 
 ### Kotlin ###
 .kotlin
+
+# Docker
+mongo-data/
+
+# Log files
+*.log
+
+# OS specific files
+.DS_Store
+Thumbs.db
