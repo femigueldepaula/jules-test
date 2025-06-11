@@ -13,5 +13,20 @@ services:
     #   MONGO_INITDB_ROOT_USERNAME: myuser
     #   MONGO_INITDB_ROOT_PASSWORD: mypassword
 
+  product-api:
+    build: . # Assumes Dockerfile is in the root directory
+    container_name: product-api
+    ports:
+      - "8080:8080" # Assuming Spring Boot runs on 8080
+    depends_on:
+      - mongodb
+    environment:
+      # This URI points to the mongodb service within the Docker network
+      # If MONGO_INITDB_ROOT_USERNAME and MONGO_INITDB_ROOT_PASSWORD are set for mongodb,
+      # the URI should be: SPRING_DATA_MONGODB_URI: mongodb://myuser:mypassword@mongodb:27017/productdb?authSource=admin
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/productdb
+      # Optional: Set server port if not default 8080 or if needs to be configurable
+      # SERVER_PORT: 8080
+
 volumes:
   mongo-data:
